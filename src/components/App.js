@@ -15,9 +15,15 @@ class App extends React.Component {
     }
   }
   
+<<<<<<< HEAD
   findPets=()=>{
     let URL="/api/pets";
     if(this.state.filters.type!=='all'){
+=======
+  findPet=()=>{
+    let URL="/api/pets";
+    if(this.state.filters.type!=="all"){
+>>>>>>> f0f80fe6ddc4ff03071ed8b1b465bd50c01ca06a
       URL=URL+`?type=${this.state.filters.type}`}
     
     fetch(URL)
@@ -31,6 +37,7 @@ class App extends React.Component {
   
   
   onAdoptPet=(idx)=>{
+<<<<<<< HEAD
   const newpets= this.state.pets.map(pet=>{
   return pet.id === idx ? { ...pet, isAdopted: true } : pet
   })
@@ -38,6 +45,12 @@ class App extends React.Component {
   }
   
 
+=======
+  let adopted=this.state.pets.map(pet=>
+   {return pet.id===idx? {...pet,pet.isAdobted:true} :pet})
+    return this.setState({pets:adopted})
+  }
+>>>>>>> f0f80fe6ddc4ff03071ed8b1b465bd50c01ca06a
 
   render() {
     return (
